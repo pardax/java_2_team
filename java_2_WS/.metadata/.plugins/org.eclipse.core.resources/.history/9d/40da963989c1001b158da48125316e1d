@@ -1,0 +1,23 @@
+package swing.frame;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame{
+	
+	public MyFrame(String title, int w, int h) {
+		setTitle(title);
+		setSize(w, h);
+		setLocationRelativeTo(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//setLayout(new BorderLayout());
+		
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new MyFrame("My «¡∑π¿”", 300, 200);
+	}
+
+}

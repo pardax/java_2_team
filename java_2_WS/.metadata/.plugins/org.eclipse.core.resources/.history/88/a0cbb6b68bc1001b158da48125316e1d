@@ -1,0 +1,82 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+
+public class LoginS extends JFrame implements ActionListener{
+	
+		JPanel logp1, logp2, logmp;
+		JTextField logID, logPW;
+		JLabel lblID, lblPW;
+		JButton btnlogin, btnsign;
+		
+	
+	public LoginS(String title, int w, int h) {
+		setTitle(title);
+		setSize(w, h);
+		setLocationRelativeTo(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new GridLayout(1,1));
+		
+		logmp = new JPanel();
+		logp1 = new JPanel();
+		logp2 = new JPanel();
+		add(logmp);
+		logmp.setLayout(new GridLayout(1,1));
+		logmp.add(logp1);
+		logmp.add(logp2);
+		Runp1();
+		Runp2();
+		
+		
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new LoginS("로그인 화면", 450, 150);
+	}
+
+	protected void Runp1() {
+		setLayout(new GridLayout(2, 2));
+		logID = new JTextField(13);
+		logPW = new JTextField(13);
+		lblID = new JLabel("아이디   : ");
+		lblPW = new JLabel("비밀번호 : ");
+		
+		logp1.add(lblID);
+		logp1.add(logID);
+		logp1.add(lblPW);
+		logp1.add(logPW);
+	}
+	protected void Runp2() {
+		setLayout(new GridLayout(1,1));
+		btnlogin = new JButton("로그인");
+		btnsign = new JButton("회원가입");
+		
+		btnlogin.addActionListener(this);
+		btnsign.addActionListener(this);
+		
+		
+		logp2.add(btnlogin);
+		logp2.add(btnsign);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object obj = e.getSource();
+		if(obj == btnlogin) {
+			
+		}else if(obj == btnsign) {
+			
+		}
+	}
+	
+}

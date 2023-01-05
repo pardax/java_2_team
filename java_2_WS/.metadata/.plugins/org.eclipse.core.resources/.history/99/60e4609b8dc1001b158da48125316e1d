@@ -1,0 +1,81 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+
+public class LoginS extends JFrame {
+	
+		private AdminMain admM;
+		private CustomerMain cusM;
+	
+		private JPanel logp1, logp2, logBase;
+		private JTextField logID, logPW;
+		private JLabel lblID, lblPW;
+		private JButton btnlogin, btnsign;
+		
+	
+	public LoginS(String title, int w, int h) {
+		setTitle(title);
+		setSize(w, h);
+		setLocationRelativeTo(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout());
+		
+		createBase();
+		add(logBase);
+		
+		createCenter();
+		logBase.add(logp1, BorderLayout.CENTER);
+		createSouth();
+		logBase.add(logp2, BorderLayout.SOUTH);
+		
+		
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new LoginS("로그인 화면", 300, 200);
+	}
+
+	private void createBase() {
+		logBase = new JPanel();
+		logBase.setLayout(new BorderLayout());
+		
+		createCenter();
+		logBase.add(logp1, BorderLayout.CENTER);
+		createSouth();
+		logBase.add(logp2, BorderLayout.SOUTH);
+	}
+	
+	private void createCenter() {
+		logp1 = new JPanel();
+		lblID = new JLabel("  ID :   ");
+		logID = new JTextField(15);
+		lblPW = new JLabel("  PW :   ");
+		logPW = new JTextField(15);
+		
+		logp1.add(lblID);
+		logp1.add(logID);
+		logp1.add(lblPW);
+		logp1.add(logPW);
+	}
+	private void createSouth() {
+		logp2 = new JPanel();
+		btnlogin = new JButton("로그인");
+		btnsign = new JButton("회원가입");
+		logp2.add(btnlogin);
+		logp2.add(btnsign);
+	}
+
+
+	
+}
